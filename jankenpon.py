@@ -78,7 +78,7 @@ def turnin():
         print("PLAYER WINS THIS MATCH")
     if sc>sp:
         print("COMPUTER WINS THIS MATCH")
-    else:
+    else sc==sp:
         print("TIE")
         
         
