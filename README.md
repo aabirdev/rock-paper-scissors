@@ -6,3 +6,10 @@ Features
 - Validate user input so invalid choices are rejected.
 - Use a replay/quit prompt after each round.
 - Computer move selection is weighted based on previous player choices.
+
+To run it, do the following in order:
+- Check you have Python installed
+- Download the file onto your computer into a folder of your choosing
+- Navigate to it in your terminal using the "cd 'path' " command
+- Then run "python rockpaperscissors.py" (if you have changed the name of the file to "filename.py" where filename is what you have named it, run python filename.py instead)
+  
