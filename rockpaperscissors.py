@@ -1,22 +1,21 @@
 import random
 
 
-def round(o, t):
-    if o>0 and o<4 and t>0 and t<4:
+def winner(o, t):
         if o == t:
             return "T"
         elif o == 1 and t == 3:
             return "W"
         elif t == 1 and o == 3:
             return "L"
-        elif o>1:
-            if o-1 == t:
-                return "W"
-            else:
-                pass
-        elif t>1:
-            if t-1 == o:
-                return "L"
+        if o>t:
+            if o>1:
+                if o-1 == t:
+                    return "W"
+        if t>o:           
+            if t>1:
+                if t-1 == o:
+                    return "L"
         
 
 def player_choice():
@@ -51,13 +50,13 @@ def game():
         pc = player_choice()
 
         if pc == 1:
-            plp+=1
+            plp+=0.1
         elif pc == 2:
-            pls +=1
+            pls +=0.1
         elif pc == 3:
-            plr +=1
+            plr +=0.1
 
-        results = round(pc, cc)
+        results = winner(pc, cc)
 
         if results == "W":
             print("You Win!")
@@ -70,12 +69,19 @@ def game():
 
 
         print(f"Current Score\nPlayer Score: {ps} \t Computer Score: {cs}")
-        ch = input("R to play another round, Q to quit: ")
 
-        if ch == "R":
-            playing = True
-        elif ch == "Q":
-            playing = False
+        while True:
+            ch = input("R to play another round, Q to quit: ")
+            ch = ch.lower().strip()
+            if ch not in ["r", "q"]:
+                print("Invalid input, please re-enter the letters R or Q (Case does not matter)")
+            else:
+                if ch == "r":
+                    playing = True
+                    break   
+                elif ch == "q":
+                    playing = False
+                    break
 
 def main():
     game()
